@@ -21,6 +21,11 @@ export function Header() {
               Contatos
             </a>
           </li>
+          <li>
+            <Link href="/posts" className="hover:text-gray-400">
+              Posts
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
