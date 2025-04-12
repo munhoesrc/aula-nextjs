@@ -1,4 +1,6 @@
-interface PostProps {
+import Link from "next/link";
+
+export interface PostProps {
   id: number;
   title: string;
   body: string;
@@ -58,10 +60,14 @@ export default async function PostsPage() {
       </form>
 
       <div className="flex flex-col gap-4 mx-2">
-        {data.posts.map((post: any) => (
+        {data.posts.map((post: any, index: number) => (
           <div key={post.id} className="bg-gray-200 p-4 rounded-md shadow-md">
+            <p className="text-sm text-gray-500">Post #{index + 1}</p>
             <h2 className="font-bold">{post.title}</h2>
             <p>{post.body}</p>
+            <Link href={`/posts/${post.id}`} className="text-blue-500">
+              Ver detalhes
+            </Link>
           </div>
         ))}
       </div>
