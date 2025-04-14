@@ -15,10 +15,7 @@ export const revalidate = 60; // Revalida a cada 60 segundos no componente
 
 export default async function PostsPage() {
   const response = await fetch("https://dummyjson.com/posts", {
-    cache: "force-cache",
-    next: {
-      revalidate: 60, // Revalida a cada 60 segundos na requisição
-    },
+    cache: "no-cache",
   });
 
   const data: ResponseProps = await response.json();
