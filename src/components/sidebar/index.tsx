@@ -2,7 +2,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "../ui/button";
 
 import Link from "next/link";
-import { PanelBottom } from "lucide-react";
+import { Package, PanelBottom } from "lucide-react";
 
 export default function Sidebar() {
   return (
@@ -14,17 +14,24 @@ export default function Sidebar() {
         >
           <Sheet>
             <SheetTrigger asChild>
-              <Button size="icon" variant="outline" className="sm-hidden">
+              <Button
+                size="icon"
+                variant="outline"
+                className="sm-hidden cursor-pointer"
+              >
                 <PanelBottom className="w-5 h-5" />
-                <span className="flex items-center gap-2 sr-only">
-                  Abrir Menu
-                </span>
+                <span className="sr-only">Abrir Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent>
-              <nav>
-                <Link href="#">
-                  <span>Conteúdo Sidebar</span>
+            <SheetContent className="sm:max-w-x">
+              <nav className="grid gap-6 text-lg font-medium p-6">
+                <Link
+                  href="#"
+                  className="flex h-10 w-10 bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base"
+                  prefetch={false}
+                >
+                  <Package className="w-5 h-5 transition-all" />
+                  <span className="sr-only">Conteúdo Sidebar</span>
                 </Link>
               </nav>
             </SheetContent>
