@@ -1,3 +1,4 @@
+import ChartOverview from "@/components/chart";
 import {
   Card,
   CardContent,
@@ -90,6 +91,9 @@ export default function Dashboard() {
             </p>
           </CardContent>
         </Card>
+      </section>
+      <section className="py-4">
+        <ChartOverview />
       </section>
     </main>
   );
