@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 import { Header } from "../components/header";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -32,17 +34,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.className
         )}
       >
-        <Header />
-        <br />
-        <Sidebar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <br />
+          <Sidebar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
