@@ -1,4 +1,5 @@
 import ChartOverview from "@/components/chart";
+import Customers from "@/components/customers";
 import {
   Card,
   CardContent,
@@ -92,8 +93,9 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </section>
-      <section className="py-4">
+      <section className="mt-4 flex flex-col md:flex-row gap-4">
         <ChartOverview />
+        <Customers />
       </section>
     </main>
   );
