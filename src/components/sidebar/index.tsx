@@ -22,7 +22,7 @@ export default function Sidebar() {
   return (
     <div className="flex w-full flex-col bg-muted/40">
       {/* Sidebar para desktop */}
-      <aside className="fixed inset-y-16 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col">
+      <aside className="fixed inset-y-17 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col">
         <nav className="flex flex-col items-center gap-4 px-2 py-5">
           <TooltipProvider>
             <Link
